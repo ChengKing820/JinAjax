@@ -3,9 +3,18 @@
 原生JS封装AJAX方法，支持IE6
 
 
+# 目录结构
+
+-dist  产物文件夹
+--JinAjax.js  --简洁版产物，无注释
+--JinAjax.min.js  --混淆压缩后产物
+-index.html 本地调试用html文档
+-plugin.js 本地调试用JS文件，含注释
+-test.json 本地调试用返回参数文件
+
 
 # 使用方法
-1.HTML中引入index.js  文件名可随意修改
+1.HTML中引入plugin.js  文件名可随意修改
 
 2.script标签中代码如下
 
@@ -16,6 +25,7 @@ var obj = {
       header: {     //自定义header
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
+      timeout: 5000 //超时时间设置，默认值10000，单位为毫秒
       data: {    //非GET请求数据参数
         url: '123'
       },
@@ -34,6 +44,6 @@ var obj = {
 ```
 
 
-#本地调试
+# 本地调试
 1.将nginx服务配置到JinAjax文件夹下
 2.访问nginx服务，默认请求test.json

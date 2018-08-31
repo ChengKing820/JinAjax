@@ -8,26 +8,30 @@
 </head>
 
 <body>
-  <script src="./index.js"></script>
+
+  <h1 style="text-align:center">请打开控制台查看请求</h1>
+  <script src="./plugin.js"></script>
   <script>
     var obj = {
       methods: 'GET',
       url: './test.json',
+      // url: 'http://100.66.130.108:8081/install/getReports',
       header: {
-        // 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
       data: {
         url: '123'
       },
+      timeout: 5000,
       async: true,
       success: function (res) {
         console.log(res)
       },
       error: function (e) {
-        console.log(e)
+        console.error(e)
       },
       before: function () {
-        console.log('aaa')
+        console.log('发起请求之前先执行before方法')
       }
     }
     var ajax = new JinAjax(obj)
