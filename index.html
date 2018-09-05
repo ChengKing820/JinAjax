@@ -14,8 +14,9 @@
   <script>
     var obj = {
       methods: 'GET',
-      url: './test.json',
-      // url: 'http://100.66.130.108:8081/install/getReports',
+      url: './test.json',  //普通请求测试URL
+      // url: 'http://100.66.130.108:8081/install/getReports',  //超时测试URL
+      // url: 'http://www.runoob.com/try/ajax/jsonp.php',  //JSONP测试URL
       header: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
       },
@@ -24,6 +25,8 @@
       },
       timeout: 5000,
       async: true,
+      type: 'json',
+      jsonp: 'jsoncallback',  //JSONP 约定的回调方法名
       success: function (res) {
         console.log(res)
       },

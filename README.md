@@ -30,6 +30,8 @@ var obj = {
         url: '123'
       },
       async: true,   //是否为异步请求，true为异步，false为同步
+      type: 'jsonp',  //jsonp请求，默认json，可选择jsonp请求
+      jsonp: 'jsoncallback',  //JSONP 约定的回调方法名，默认callback
       success: function (res) {   //成功回调
         console.log(res)
       },
